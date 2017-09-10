@@ -50,55 +50,63 @@ class ViewController: UIViewController {
             player = 2
         }
         let marker = sender.tag
-        switch marker {
-        case 0:
-            if gameboard[0][0] == 0 {
-            gameboard[0][0] = player
+        let posY = marker / 3
+        let posX = marker % 3
+        if gameboard[posY][posX] == 0 {
+            gameboard[posY][posX] = player
+            print(gameboard)
+            print(player)
             changeColor()
-            }
-        case 1:
-            if gameboard[0][1] == 0 {
-                gameboard[0][1] = player
-                changeColor()
-            }
-        case 2:
-            if gameboard[0][2] == 0 {
-                gameboard[0][2] = player
-                changeColor()
-            }
-        case 3:
-            if gameboard[1][0] == 0 {
-                gameboard[1][0] = player
-                changeColor()
-            }
-        case 4:
-            if gameboard[1][1] == 0 {
-                gameboard[1][1] = player
-                changeColor()
-            }
-        case 5:
-            if gameboard[1][2] == 0 {
-                gameboard[1][2] = player
-                changeColor()
-            }
-        case 6:
-            if gameboard[2][0] == 0 {
-                gameboard[2][0] = player
-                changeColor()
-            }
-        case 7:
-            if gameboard[2][1] == 0 {
-                gameboard[2][1] = player
-                changeColor()
-            }
-        case 8:
-            if gameboard[2][2] == 0 {
-                gameboard[2][2] = player
-                changeColor()
-            }
-        default:
-            gameboard[0][0] = player
         }
+//        switch marker {
+//        case 0:
+//            if gameboard[0][0] == 0 {
+//            gameboard[0][0] = player
+//            changeColor()
+//            }
+//        case 1:
+//            if gameboard[0][1] == 0 {
+//                gameboard[0][1] = player
+//                changeColor()
+//            }
+//        case 2:
+//            if gameboard[0][2] == 0 {
+//                gameboard[0][2] = player
+//                changeColor()
+//            }
+//        case 3:
+//            if gameboard[1][0] == 0 {
+//                gameboard[1][0] = player
+//                changeColor()
+//            }
+//        case 4:
+//            if gameboard[1][1] == 0 {
+//                gameboard[1][1] = player
+//                changeColor()
+//            }
+//        case 5:
+//            if gameboard[1][2] == 0 {
+//                gameboard[1][2] = player
+//                changeColor()
+//            }
+//        case 6:
+//            if gameboard[2][0] == 0 {
+//                gameboard[2][0] = player
+//                changeColor()
+//            }
+//        case 7:
+//            if gameboard[2][1] == 0 {
+//                gameboard[2][1] = player
+//                changeColor()
+//            }
+//        case 8:
+//            if gameboard[2][2] == 0 {
+//                gameboard[2][2] = player
+//                changeColor()
+//            }
+//        default:
+//            gameboard[0][0] = player
+//        }
         
         print(gameboard)
         print(player)
@@ -111,12 +119,7 @@ class ViewController: UIViewController {
     }
 
     func changeColor() {
-//        var color: UIColor
-//        if player == 1 {
-//            color = UIColor.green
-//        } else {
-//            color = UIColor.purple
-//        }
+ 
         
         for y in 0..<gameboard.count {
             var x = 0
